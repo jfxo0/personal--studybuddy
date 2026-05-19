@@ -7,7 +7,7 @@
     "test": "node --env-file=.env test.js",
     "create": "node --env-file=.env create.js",
     "load": "node --env-file=.env load.js",
-    "local": "node --env-file=.env --watch server.js",
+    "local": "node --env-file=.env --watch server-local.js",
     "dev": "vercel dev"
   },
   "keywords": [],
