@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>StudyBuddy</title>
 
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+            rel="stylesheet"
+    />
 </head>
 
 <body class="bg-base-200 bg-[url('/background.gif')] bg-no-repeat bg-cover bg-center">
+<div class="flex flex-col h-screen max-w-2xl mx-auto p-4">
 
-    <div class="flex flex-col h-screen max-w-2xl mx-auto p-4">
-
-        <div class="mb-4">
-            <h1 class="text-2xl font-bold">StudyBuddy </h1>
-            <p class="text-sm opacity-70 text-white">
-                Stel vragen over je documenten en krijg uitleg en een quiz
-            </p>
-        </div>
-
-
-        <div id="messages" class="flex-1 overflow-y-auto space-y-2 mb-4">
-
-            <div class="chat chat-start">
-                <div class="chat-bubble bg-amber-700">
-                    Hey! Ik ben StudyBuddy. Waar wil je hulp mee?
-                </div>
-            </div>
-
-        </div>
-
-        <form id="form" class="flex gap-2">
-            <input id="input" type="text" placeholder="Stel je vraag..."
-                class="input input-bordered w-full bg-amber-700" />
-            <button id="sendButton" class="btn btn-primary text-white bg-amber-950">
-                Send
-            </button>
-        </form>
-
+    <div class="mb-4">
+        <h1 class="text-2xl font-bold text-white">StudyBuddy</h1>
+        <p class="text-sm opacity-80 text-white">
+            Stel vragen over je documenten en krijg uitleg en
+        </p>
     </div>
 
-    <script type="module" src="app.js"></script>
+    <div class="flex gap-2 mb-4">
+        <input
+                id="fileInput"
+                type="file"
+                class="file-input file-input-bordered w-full bg-amber-700 text-white"
+        />
 
+        <button
+                id="uploadButton"
+                type="button"
+                class="btn bg-amber-950 text-white border-none"
+        >
+            Upload
+        </button>
+    </div>
+
+    <div id="messages" class="flex-1 overflow-y-auto space-y-2 mb-4">
+        <div class="chat chat-start">
+            <div class="chat-bubble bg-amber-700 text-white">
+                Hey! Ik ben StudyBuddy. Waar wil je hulp mee?
+            </div>
+        </div>
+    </div>
+
+    <form id="form" class="flex gap-2">
+        <input
+                id="input"
+                type="text"
+                placeholder="Stel je vraag..."
+                class="input input-bordered w-full bg-amber-700 text-white placeholder-white/70"
+        />
+
+        <button
+                id="sendButton"
+                type="submit"
+                class="btn bg-amber-950 text-white border-none"
+        >
+            Send
+        </button>
+    </form>
+
+</div>
+
+<script type="module" src="app.js"></script>
 </body>
-
 </html>

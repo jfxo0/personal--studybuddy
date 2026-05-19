@@ -34,6 +34,24 @@ function addMessage(text, sender = "bot") {
     messages.scrollTop = messages.scrollHeight;
 }
 
+const fileInput = document.getElementById("fileInput");
+const uploadButton = document.getElementById("uploadButton");
+
+uploadButton.addEventListener("click", async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("document", file);
+
+    const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+    });
+
+    const data = await res.json();
+    addMessage("📄 " + data.message, "bot");
+});
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 

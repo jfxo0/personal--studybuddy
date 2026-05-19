@@ -2,7 +2,7 @@ import { AzureChatOpenAI } from "@langchain/openai"
 import { createAgent, tool } from "langchain";
 import { MemorySaver } from "@langchain/langgraph";
 import * as z from "zod";
-import { MakeQuiz, retrieve, rollDice } from "./tools.js";
+import { retrieve, rollDice } from "./tools.js";
 
 
 const checkpointer = new MemorySaver();
@@ -17,7 +17,7 @@ const myToolResponse = z.object({
 
 const agent = createAgent({
     model,
-    tools: [retrieve, rollDice, MakeQuiz],
+    tools: [retrieve],
     responseFormat: myToolResponse,
     checkpointer,
     systemPrompt: `Je bent StudyBuddy.
@@ -25,8 +25,6 @@ const agent = createAgent({
 Gedrag:
 - Beantwoord vragen met de retrieve tool en gebruik de make_quiz tool om gelijk daarna een quiz te maken over de informatie van de retrieve tool
 - vertel altijd de bron waar je de informatie vandaan gehaald heb (bestandsnaam & pagina)
-- ALS de gebruiker vraagt om een quiz → gebruik ALTIJD de make_quiz tool
-- Combineer uitleg + quiz indien gevraagd
 - Geef nette markdown output
 - Geef altijd de bron van het document (bestandsnaam) en de pagina waar je het kan vinden
 `})
