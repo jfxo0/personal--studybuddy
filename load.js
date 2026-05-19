@@ -11,7 +11,7 @@ const model = new AzureChatOpenAI({
 })
 
 // const vectorStore = new MemoryVectorStore(embeddings);
-const vectorStore = await FaissStore.load("vectordb", embeddings);
+const vectorStore = await FaissStore.load("./vectordb", embeddings);
 console.log("vectore store loaded")
 
 
