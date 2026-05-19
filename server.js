@@ -1,7 +1,7 @@
 
 import express, { response } from "express"
 import { ask } from "./load.js"
-import { callAgent } from "./api"
+import { callAgent } from "./agent.js"
 import multer from "multer";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
