@@ -5,9 +5,9 @@
   "main": "agent.js",
   "scripts": {
     "test": "node --env-file=.env test.js",
-    "create": "node --env-file=.env ./create.js",
-    "load": "node --env-file=.env ./load.js",
-    "start": "node --env-file=.env --watch ./server.js"
+    "create": "node --env-file=.env create.js",
+    "load": "node --env-file=.env load.js",
+    "start": "node --env-file=.env --watch server.js"
   },
   "keywords": [],
   "author": "",
