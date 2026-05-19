@@ -18,7 +18,7 @@ const embeddings = new AzureOpenAIEmbeddings({
 
 export const retrieve = tool(
     async ({ query }) => {
-        const vectorStore = await FaissStore.load("./api/vectordb", embeddings);
+        const vectorStore = await FaissStore.load("./vectordb", embeddings);
         console.log("vectore store loaded")
         console.log("🔧 now searching the document store")
         const relevantDocs = await vectorStore.similaritySearch(query, 2)
